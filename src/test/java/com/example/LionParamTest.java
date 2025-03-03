@@ -5,9 +5,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 
 @RunWith(Parameterized.class)
 public class LionParamTest {
+
+    @Mock
+    private Feline feline;
 
     private final String sex;
     private final boolean hasMane;
@@ -27,7 +31,7 @@ public class LionParamTest {
 
     @Test
     public void doesHaveMane() throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, feline);
         Assert.assertEquals("Unexpected sex", hasMane, lion.doesHaveMane());
     }
 }
