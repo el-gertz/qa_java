@@ -16,6 +16,7 @@ public class FelineTest {
 
     @Test
     public void getFamily() {
+        Feline feline = new Feline();
         Assert.assertEquals("Unexpected family", "Кошачьи", feline.getFamily());
     }
 
@@ -27,6 +28,7 @@ public class FelineTest {
 
     @Test
     public void getKittensCount() {
+        Feline feline = new Feline();
         int count = 5;
         Assert.assertEquals("Unexpected kittens", count, feline.getKittens(count));
     }
